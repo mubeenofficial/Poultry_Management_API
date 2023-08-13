@@ -10,7 +10,7 @@ const fetchuserToken = (req, res, next)=>{
   try{
     let data = jwt.verify(token,secrit_key)
     req.user=data.id;
-   // console.log("hello",req.user)
+   // console.log("hello",req.user) 
     next();
   }catch(err){
     res.json({message:err.message})
